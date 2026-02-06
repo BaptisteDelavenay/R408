@@ -1,3 +1,3 @@
-Wolf clicker
+Wolf clicker est un projet universitaire créé dans le but de comprendre le fonctionnement de Git et Github.
 
-On acheète des morceaux de viande qui permettent de nourrir des loups et les loups peuvent aller chasser pour récupérer de la viande gratuitement
+Le fonctionnement est simple : En cliquant sur le bouton principal, on achète des morceaux de viandes qui permettent de nourrir des loups. Une fois qu'un loup est nourrit il est apprivoisé et peut aller chasser pour nous ramener des morceaux de viande (auto clicker). 
