@@ -182,23 +182,27 @@ h2 {
 
 /* CSS Mobile responsive */
 @media (max-width: 768px) {
-    .game-container {
-        flex-direction: column;
-    }
-    
-    .click-zone {
-        padding: 20px;
-    }
-    
-    .wolf-button {
-        width: 150px;
-        height: 150px;
-    }
+  .game-container {
+    flex-direction: column;
+  }
+
+  .click-zone {
+    padding: 20px;
+  }
+
+  .wolf-button {
+    width: 150px;
+    height: 150px;
+  }
 }
 h1 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 header {
   background-color: red;
+}
+
+p {
+  color: red;
 }
