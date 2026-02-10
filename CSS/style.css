@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-html, body {
-    margin: 0;
-    padding: 0;
-/* RESET & BASE */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-  font-family: "Roboto", sans-serif;
-  /* Dégradé sombre nuit/forêt */
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-=======
 /* =========================================
    1. RESET & BASE (Configuration générale)
    ========================================= */
@@ -53,7 +30,6 @@ body {
     /* Assombrissement pour la lisibilité (mélange noir + image) */
     background-color: rgba(0, 0, 0, 0.7); 
     background-blend-mode: darken; 
->>>>>>> c9fbc501f430ad5c487c9110a8552c48dddf2e89
 }
 
 /* =========================================
