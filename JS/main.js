@@ -12,6 +12,11 @@ class Clicker {
     return this.compteur;
   }
 
+  incrementer(val) {
+    this.compteur += val;
+    return this.compteur;
+  }
+
   payer(val) {
     this.compteur -= val;
     return this.compteur;
@@ -47,4 +52,9 @@ tralelouloup.addEventListener("click", function () {
 });
 loup67.addEventListener("click", function () {
   Clicker.payer(6767);
+});
+
+button.addEventListener("click", function () {
+  clicker.incrementer(1);
+  afficheNB.innerHTML = clicker.getCompteur();
 });
