@@ -195,17 +195,3 @@ h2 {
     height: 150px;
   }
 }
-p {
-  margin: 0;
-}
-h1 {
-  font-size: 2rem;
-}
-
-header {
-  background-color: red;
-}
-
-p {
-  color: red;
-}
