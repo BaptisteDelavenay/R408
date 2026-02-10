@@ -21,6 +21,8 @@ class Clicker {
 let clicker = new Clicker();
 let button = document.getElementById("button");
 let afficheNB = document.getElementById("compteur");
+let loup = document.getElementById("loup");
+
 
 button.addEventListener("click", function () {
   clicker.incrementer(1);
