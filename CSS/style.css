@@ -58,29 +58,4 @@ button {
     cursor: pointer;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #1a1a1a;
-}
 
-#canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none; /* Permet de cliquer à travers le canvas */
-}
-
-button {
-  padding: 15px 30px;
-  font-size: 18px;
-  cursor: pointer;
-  background-color: #ff4d4d;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  z-index: 10;
-}
