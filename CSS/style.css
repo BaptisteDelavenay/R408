@@ -1,60 +1,196 @@
+/* RESET & BASE */
 html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
+    box-sizing: border-box;
 }
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    /* Dégradé sombre nuit/forêt */
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
 }
+
+/* HEADER */
 header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
     text-align: center;
+    border-bottom: 2px solid #b31a1a;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
-nav {
-    background-color: #444;
-    overflow: hidden;
-}
-nav a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-nav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-main {
-    padding: 20px;
-}
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
+
 h1 {
-    color: #333;
+    font-family: 'Cinzel', serif; /* Police style médiéval/fantastique */
+    margin: 0;
+    color: #e94560;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
 }
-section {
-    margin-bottom: 20px;
-    margin-top: 200px;
+
+h2 {
+    font-size: 1rem;
+    color: #a0a0a0;
+    margin-top: 5px;
+    font-weight: 300;
+}
+
+/* LAYOUT PRINCIPAL */
+.game-container {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* ZONE DE CLIC (GAUCHE) */
+.click-zone {
+    flex: 2;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 300px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.score-container {
     text-align: center;
+    margin-bottom: 50px;
 }
-button {
-    background-color: #b31a1a;
+
+#compteur {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+}
+
+.currency-label {
+    color: #e94560; /* Couleur viande */
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* LE GROS BOUTON LOUP */
+.wolf-button {
+    background: radial-gradient(circle, #4e4e50 0%, #0f3460 100%);
     color: white;
-    padding: 10px 20px;
-    width: 15%;
-    height: 10%;
-    border: none;
+    width: 200px;
+    height: 200px;
+    border: 4px solid #b31a1a;
+    border-radius: 50%;
     cursor: pointer;
-    border-radius: 50px;
+    transition: all 0.1s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(179, 26, 26, 0.4);
+    outline: none;
+    user-select: none; /* Empêche de sélectionner le texte en cliquant vite */
+}
+
+.wolf-icon {
+    font-size: 4rem;
+    margin-bottom: 5px;
+}
+
+.wolf-button span {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+}
+
+/* Animation au clic */
+.wolf-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(179, 26, 26, 0.8);
+    background: radial-gradient(circle, #5e5e60 0%, #1f4470 100%);
+}
+
+.wolf-button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(179, 26, 26, 0.6);
+}
+
+/* ZONE DE BOUTIQUE (DROITE) */
+.shop-zone {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shop-zone h3 {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    color: #ffd700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.shop-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.shop-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.shop-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-name {
+    font-weight: bold;
+}
+
+.item-cost {
+    color: #e94560;
+    font-size: 0.9rem;
+}
+
+.item-count {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #888;
+}
+
+/* CSS Mobile responsive */
+@media (max-width: 768px) {
+    .game-container {
+        flex-direction: column;
+    }
+    
+    .click-zone {
+        padding: 20px;
+    }
+    
+    .wolf-button {
+        width: 150px;
+        height: 150px;
+    }
 }
