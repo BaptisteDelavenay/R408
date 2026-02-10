@@ -7,7 +7,7 @@ html, body {
     height: 100%;
     width: 100%;
     box-sizing: border-box;
-    overflow-x: hidden; /* Empêche le scroll horizontal accidentel */
+    overflow-x: hidden;
 }
 
 body {
@@ -18,90 +18,34 @@ body {
     min-height: 100vh;
 
     /* --- FOND D'ÉCRAN FORÊT SOMBRE --- */
-    /* Image de forêt brumeuse */
     background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-    
-    /* Centrage et couverture */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Fixe le fond pendant le scroll */
-    
-    /* Assombrissement pour la lisibilité (mélange noir + image) */
+    background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.7); 
     background-blend-mode: darken; 
 }
 
+/* =========================================
+   2. HEADER (En-tête)
+   ========================================= */
 header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-nav {
-    background-color: #444;
-    overflow: hidden;
-}
-nav a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-nav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-main {
-    padding: 20px;
-}
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-h1 {
-    color: #333;
-}
-section {
-    margin-bottom: 20px;
-    margin-top: 200px;
-    text-align: center;
-}
-button {
-    background-color: #b31a1a;
-    color: white;
-    padding: 10px 20px;
-    width: 15%;
-    height: 10%;
-    border: none;
-    cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px 0;
-  text-align: center;
-  border-bottom: 2px solid #b31a1a;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.85); /* Très sombre */
+    background-color: rgba(0, 0, 0, 0.85);
     padding: 20px 0;
     text-align: center;
-    border-bottom: 2px solid #b31a1a; /* Rouge sang */
+    border-bottom: 2px solid #b31a1a;
     box-shadow: 0 4px 15px rgba(0,0,0,0.8);
     position: relative;
     z-index: 10;
 }
 
 h1 {
-    font-family: 'Cinzel', serif; /* Police style médiéval */
+    font-family: 'Cinzel', serif;
     margin: 0;
     color: #e94560;
     font-size: 2.5rem;
-    text-shadow: 0 0 10px rgba(233, 69, 96, 0.5); /* Lueur rouge */
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
 }
 
 h2 {
@@ -119,38 +63,45 @@ h2 {
 .game-container {
     display: flex;
     flex: 1;
-    flex-wrap: wrap; /* Permet de passer à la ligne sur mobile */
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
     padding: 20px;
-    gap: 20px; /* Espace entre les colonnes */
+    gap: 20px;
     position: relative;
     z-index: 5;
+    /* Aligne les deux boîtes (gauche et droite) vers le haut */
+    align-items: flex-start; 
 }
 
 /* =========================================
-   4. ZONE DE CLIC (Gauche - Loup)
+   4. ZONE DE CLIC (Gauche - Loup) - MODIFIÉ
    ========================================= */
 .click-zone {
-    flex: 2; /* Prend plus de place que la boutique */
-    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
-    backdrop-filter: blur(5px); /* Effet de flou "verre dépoli" */
+    flex: 2;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
     border-radius: 15px;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    
+    /* C'EST ICI QUE ÇA CHANGE POUR L'ALIGNEMENT */
+    justify-content: flex-start; /* Aligne le contenu en haut */
+    padding-top: 60px; /* Espace depuis le haut de la boîte */
+    padding-bottom: 40px;
+    
     min-width: 300px;
-    padding: 40px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    position: relative; /* Pour positionner les particules par rapport à cette zone si besoin */
+    position: relative;
 }
 
 .score-container {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 50px; /* Espace entre le score et le bouton */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
@@ -172,22 +123,21 @@ h2 {
 
 /* --- LE BOUTON "CHASSER" --- */
 .wolf-button {
-    /* Dégradé métallique sombre */
     background: radial-gradient(circle, #3a3a3c 0%, #0a2440 100%);
     color: white;
     width: 220px;
     height: 220px;
     border: 4px solid #b31a1a;
-    border-radius: 50%; /* Cercle parfait */
+    border-radius: 50%;
     cursor: pointer;
-    transition: all 0.1s ease; /* Animation rapide */
+    transition: all 0.1s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 30px rgba(179, 26, 26, 0.3);
     outline: none;
-    user-select: none; /* Empêche la sélection de texte */
+    user-select: none;
     position: relative;
     overflow: hidden;
 }
@@ -205,16 +155,14 @@ h2 {
     text-shadow: 1px 1px 2px black;
 }
 
-/* Effets au survol (Hover) */
 .wolf-button:hover {
-    transform: scale(1.05); /* Grossit un peu */
+    transform: scale(1.05);
     box-shadow: 0 0 50px rgba(179, 26, 26, 0.6);
     border-color: #ff1f1f;
 }
 
-/* Effets au clic (Active) */
 .wolf-button:active {
-    transform: scale(0.95); /* Rétrécit un peu (effet d'enfoncement) */
+    transform: scale(0.95);
     box-shadow: 0 0 10px rgba(179, 26, 26, 0.8);
     background: radial-gradient(circle, #2a2a2c 0%, #081a30 100%);
 }
@@ -223,19 +171,18 @@ h2 {
    5. ZONE BOUTIQUE (Droite - Améliorations)
    ========================================= */
 .shop-zone {
-    flex: 1; /* Prend moins de place */
-    background: rgba(0, 0, 0, 0.8); /* Plus opaque pour lire le texte */
+    flex: 1;
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(5px);
     border-radius: 15px;
     padding: 20px;
     min-width: 280px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    max-height: 80vh; /* Limite la hauteur si beaucoup d'items */
-    overflow-y: auto; /* Scroll si nécessaire */
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
-/* Barre de défilement personnalisée pour la boutique */
 .shop-zone::-webkit-scrollbar {
     width: 8px;
 }
@@ -250,7 +197,7 @@ h2 {
 .shop-zone h3 {
     text-align: center;
     font-family: 'Cinzel', serif;
-    color: #ffd700; /* Or */
+    color: #ffd700;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 15px;
     margin-top: 0;
@@ -258,7 +205,6 @@ h2 {
     font-size: 1.5rem;
 }
 
-/* Item de la boutique */
 .shop-item {
     background-color: rgba(255, 255, 255, 0.05);
     margin-bottom: 12px;
@@ -275,14 +221,13 @@ h2 {
 .shop-item:hover {
     background-color: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.3);
-    transform: translateX(5px); /* Petit décalage vers la droite */
+    transform: translateX(5px);
 }
 
-/* Item désactivé (pas assez d'argent) */
 .shop-item.disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    filter: grayscale(100%); /* En gris */
+    filter: grayscale(100%);
 }
 .shop-item.disabled:hover {
     transform: none;
@@ -301,7 +246,7 @@ h2 {
 }
 
 .item-cost {
-    color: #e94560; /* Rouge */
+    color: #e94560;
     font-size: 0.9rem;
     font-weight: bold;
     margin-top: 4px;
@@ -310,28 +255,24 @@ h2 {
 .item-count {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #666; /* Gris si 0 */
+    color: #666;
 }
-/* Si on en possède au moins 1 (à gérer en JS pour ajouter une classe 'owned') */
 .item-count.owned {
     color: #ffd700;
 }
 
 /* =========================================
-   6. ANIMATIONS & PARTICULES (Effet Viande)
+   6. ANIMATIONS & PARTICULES
    ========================================= */
-
-/* Le petit steak qui apparaît au clic */
 .meat-particle {
-    position: fixed; /* 'Fixed' permet de se baser sur la fenêtre, mieux pour suivre la souris */
+    position: fixed;
     font-size: 2rem;
-    pointer-events: none; /* Le clic passe à travers */
-    z-index: 9999; /* Toujours au-dessus */
+    pointer-events: none;
+    z-index: 9999;
     animation: floatUpAndFade 0.8s ease-out forwards;
     user-select: none;
 }
 
-/* L'animation : monte, tourne et disparaît */
 @keyframes floatUpAndFade {
     0% {
         opacity: 1;
@@ -348,13 +289,13 @@ h2 {
 }
 
 /* =========================================
-   7. RESPONSIVE (Mobile)
+   7. RESPONSIVE
    ========================================= */
 @media (max-width: 768px) {
     h1 { font-size: 2rem; }
     
     .game-container {
-        flex-direction: column; /* Tout en colonne */
+        flex-direction: column;
         padding: 10px;
     }
     
@@ -369,7 +310,7 @@ h2 {
     }
     
     .shop-zone {
-        width: 100%; /* Prend toute la largeur */
+        width: 100%;
         box-sizing: border-box;
     }
 }
