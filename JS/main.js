@@ -32,4 +32,27 @@ button.addEventListener("click", function(){
     clicker.incrementer(1);
     afficheNB.innerHTML = clicker.getCompteur()
 })
+
+// --- EFFET VISUEL : PLUIE DE VIANDE ---
+// C'est cette fonction qui fait apparaître le steak
+function spawnMeatParticle(x, y) {
+    // 1. Créer l'élément
+    const meat = document.createElement('div');
+    meat.classList.add('meat-particle'); // Classe définie dans le CSS
+    meat.textContent = '🥩'; 
     
+    // 2. Position aléatoire autour du clic pour un effet naturel
+    const randomX = (Math.random() - 0.5) * 50; // Décalage horizontal
+    const randomY = (Math.random() - 0.5) * 50; // Décalage vertical
+
+    meat.style.left = `${x + randomX}px`;
+    meat.style.top = `${y + randomY}px`;
+
+    // 3. Ajouter au corps de la page
+    document.body.appendChild(meat);
+
+    // 4. Supprimer après l'animation (0.8 seconde)
+    setTimeout(() => {
+        meat.remove();
+    }, 800);
+}
