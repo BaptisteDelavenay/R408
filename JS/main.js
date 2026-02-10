@@ -23,6 +23,7 @@ button.addEventListener("click", function(){
     clicker.incrementer(1);
     afficheNB.innerHTML = clicker.getCompteur()
 })
+
 // --- EFFET VISUEL : PLUIE DE VIANDE ---
 // C'est cette fonction qui fait apparaître le steak
 function spawnMeatParticle(x, y) {
