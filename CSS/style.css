@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 html, body {
     margin: 0;
     padding: 0;
-=======
 /* RESET & BASE */
 html,
 body {
@@ -10,26 +8,21 @@ body {
   padding: 0;
   height: 100%;
   box-sizing: border-box;
->>>>>>> f93510d577bf5b6304c5824e6b002aa9eafb8a71
 }
 
 body {
-<<<<<<< HEAD
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-=======
   font-family: "Roboto", sans-serif;
   /* Dégradé sombre nuit/forêt */
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   color: #fff;
   display: flex;
   flex-direction: column;
->>>>>>> f93510d577bf5b6304c5824e6b002aa9eafb8a71
 }
 
 /* HEADER */
 header {
-<<<<<<< HEAD
     background-color: #333;
     color: white;
     padding: 10px 0;
@@ -79,7 +72,6 @@ button {
     height: 10%;
     border: none;
     cursor: pointer;
-=======
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px 0;
   text-align: center;
@@ -244,26 +236,28 @@ h2 {
 
 /* CSS Mobile responsive */
 @media (max-width: 768px) {
-    .game-container {
-        flex-direction: column;
-    }
-    
-    .click-zone {
-        padding: 20px;
-    }
-    
-    .wolf-button {
-        width: 150px;
-        height: 150px;
-    }
+  .game-container {
+    flex-direction: column;
+  }
+
+  .click-zone {
+    padding: 20px;
+  }
+
+  .wolf-button {
+    width: 150px;
+    height: 150px;
+  }
 }
 h1 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 header {
   background-color: red;
->>>>>>> f93510d577bf5b6304c5824e6b002aa9eafb8a71
 }
 
 
+p {
+  color: red;
+}
