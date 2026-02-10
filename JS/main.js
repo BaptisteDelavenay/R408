@@ -23,14 +23,28 @@ let button = document.getElementById("button");
 let afficheNB = document.getElementById("compteur");
 
 let loup = document.getElementById("loup");
+let alpha = document.getElementById("alpha");
+let loupia = document.getElementById("loupia");
+let tralelouloup = document.getElementById("tralelouloup");
+let loup67 = document.getElementById("loup67");
 
 button.addEventListener("click", function () {
   clicker.incrementer(1);
   afficheNB.innerHTML = clicker.getCompteur();
 });
 
-loup.addEventListener("click", function () {});
-alpha.addEventListener("click", function () {});
-louia.addEventListener("click", function () {});
-tralelouloup.addEventListener("click", function () {});
-lou67.addEventListener("click", function () {});
+loup.addEventListener("click", function () {
+  Clicker.payer(10);
+});
+alpha.addEventListener("click", function () {
+  Clicker.payer(200);
+});
+loupia.addEventListener("click", function () {
+  Clicker.payer(500);
+});
+tralelouloup.addEventListener("click", function () {
+  Clicker.payer(1000);
+});
+loup67.addEventListener("click", function () {
+  Clicker.payer(6767);
+});
