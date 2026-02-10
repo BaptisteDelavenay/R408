@@ -1,57 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aouu Clicker - Le Réveil de la Meute</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/style.css">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Aouu Clicker 🌕</h1>
-        <h2>Fondez votre meute légendaire</h2>
+      <h1>Aouu Clicker 🌕</h1>
+      <h2>Fondez votre meute légendaire</h2>
     </header>
 
     <main class="game-container">
-        <section class="click-zone">
-            <div class="score-container">
-                <span id="compteur">0</span>
-                <span class="currency-label">🥩 Morceaux de viande</span>
-            </div>
-            
-            <button id="button" class="wolf-button">
-                <div class="wolf-icon">🐺</div>
-                <span>CHASSER</span>
-            </button>
-        </section>
+      <section class="click-zone">
+        <div class="score-container">
+          <span id="compteur">0</span>
+          <span class="currency-label">🥩 Morceaux de viande</span>
+        </div>
 
-        <aside class="shop-zone">
-            <h3>Renforcer la Meute</h3>
-            <div class="shop-item disabled">
-                <div class="shop-info">
-                    <span class="item-name">Jeune Louveteau</span>
-                    <span class="item-cost">15 🥩</span>
-                </div>
-                <div class="item-count">0</div>
-            </div>
-            <div class="shop-item disabled">
-                <div class="shop-info">
-                    <span class="item-name">Loup Solitaire</span>
-                    <span class="item-cost">100 🥩</span>
-                </div>
-                <div class="item-count">0</div>
-            </div>
-             <div class="shop-item disabled">
-                <div class="shop-info">
-                    <span class="item-name">Loup Alpha</span>
-                    <span class="item-cost">500 🥩</span>
-                </div>
-                <div class="item-count">0</div>
-            </div>
-        </aside>
+        <button id="button" class="wolf-button">
+          <div class="wolf-icon">🐺</div>
+          <span>CHASSER</span>
+        </button>
+      </section>
+
+      <aside class="shop-zone">
+        <h3>Renforcer la Meute</h3>
+        <div class="shop-item disabled">
+          <div class="shop-info">
+            <span class="item-name">Jeune Louveteau</span>
+            <span class="item-cost">15 🥩</span>
+          </div>
+          <div class="item-count">0</div>
+        </div>
+        <div class="shop-item disabled">
+          <div class="shop-info">
+            <span class="item-name">Loup Solitaire</span>
+            <span class="item-cost">100 🥩</span>
+          </div>
+          <div class="item-count">0</div>
+        </div>
+        <div class="shop-item disabled">
+          <div class="shop-info">
+            <span class="item-name">Loup Alpha</span>
+            <span class="item-cost">500 🥩</span>
+          </div>
+          <div class="item-count">0</div>
+        </div>
+      </aside>
     </main>
-    
+
     <script src="JS/main.js"></script>
-</body>
+  </body>
 </html>
