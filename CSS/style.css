@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html, body {
     margin: 0;
     padding: 0;
@@ -19,9 +20,45 @@ body {
   color: #fff;
   display: flex;
   flex-direction: column;
+=======
+/* =========================================
+   1. RESET & BASE (Configuration générale)
+   ========================================= */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Empêche le scroll horizontal accidentel */
 }
 
-/* HEADER */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    /* --- FOND D'ÉCRAN FORÊT SOMBRE --- */
+    /* Image de forêt brumeuse */
+    background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    
+    /* Centrage et couverture */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fixe le fond pendant le scroll */
+    
+    /* Assombrissement pour la lisibilité (mélange noir + image) */
+    background-color: rgba(0, 0, 0, 0.7); 
+    background-blend-mode: darken; 
+>>>>>>> c9fbc501f430ad5c487c9110a8552c48dddf2e89
+}
+
+/* =========================================
+   2. HEADER (En-tête)
+   ========================================= */
 header {
     background-color: #333;
     color: white;
@@ -77,165 +114,271 @@ button {
   text-align: center;
   border-bottom: 2px solid #b31a1a;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.85); /* Très sombre */
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 2px solid #b31a1a; /* Rouge sang */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    position: relative;
+    z-index: 10;
 }
 
 h1 {
-  font-family: "Cinzel", serif; /* Police style médiéval/fantastique */
-  margin: 0;
-  color: #e94560;
-  font-size: 2.5rem;
-  text-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+    font-family: 'Cinzel', serif; /* Police style médiéval */
+    margin: 0;
+    color: #e94560;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.5); /* Lueur rouge */
 }
 
 h2 {
-  font-size: 1rem;
-  color: #a0a0a0;
-  margin-top: 5px;
-  font-weight: 300;
+    font-size: 1rem;
+    color: #a0a0a0;
+    margin-top: 5px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* LAYOUT PRINCIPAL */
+/* =========================================
+   3. LAYOUT PRINCIPAL (Conteneur du jeu)
+   ========================================= */
 .game-container {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 20px;
-  gap: 20px;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap; /* Permet de passer à la ligne sur mobile */
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+    gap: 20px; /* Espace entre les colonnes */
+    position: relative;
+    z-index: 5;
 }
 
-/* ZONE DE CLIC (GAUCHE) */
+/* =========================================
+   4. ZONE DE CLIC (Gauche - Loup)
+   ========================================= */
 .click-zone {
-  flex: 2;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 300px;
-  padding: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    flex: 2; /* Prend plus de place que la boutique */
+    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    backdrop-filter: blur(5px); /* Effet de flou "verre dépoli" */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 300px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: relative; /* Pour positionner les particules par rapport à cette zone si besoin */
 }
 
 .score-container {
-  text-align: center;
-  margin-bottom: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
 #compteur {
-  font-size: 4rem;
-  font-weight: bold;
-  color: #fff;
-  display: block;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    font-family: 'Cinzel', serif;
 }
 
 .currency-label {
-  color: #e94560; /* Couleur viande */
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+    color: #e94560;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
-/* LE GROS BOUTON LOUP */
+/* --- LE BOUTON "CHASSER" --- */
 .wolf-button {
-  background: radial-gradient(circle, #4e4e50 0%, #0f3460 100%);
-  color: white;
-  width: 200px;
-  height: 200px;
-  border: 4px solid #b31a1a;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.1s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 20px rgba(179, 26, 26, 0.4);
-  outline: none;
-  user-select: none; /* Empêche de sélectionner le texte en cliquant vite */
+    /* Dégradé métallique sombre */
+    background: radial-gradient(circle, #3a3a3c 0%, #0a2440 100%);
+    color: white;
+    width: 220px;
+    height: 220px;
+    border: 4px solid #b31a1a;
+    border-radius: 50%; /* Cercle parfait */
+    cursor: pointer;
+    transition: all 0.1s ease; /* Animation rapide */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(179, 26, 26, 0.3);
+    outline: none;
+    user-select: none; /* Empêche la sélection de texte */
+    position: relative;
+    overflow: hidden;
 }
 
 .wolf-icon {
-  font-size: 4rem;
-  margin-bottom: 5px;
+    font-size: 5rem;
+    margin-bottom: 5px;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
 }
 
 .wolf-button span {
-  font-family: "Cinzel", serif;
-  font-size: 1.2rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
 }
 
-/* Animation au clic */
-.wolf-button:active {
-  transform: scale(0.95);
-  box-shadow: 0 0 5px rgba(179, 26, 26, 0.8);
-  background: radial-gradient(circle, #5e5e60 0%, #1f4470 100%);
-}
-
+/* Effets au survol (Hover) */
 .wolf-button:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 30px rgba(179, 26, 26, 0.6);
+    transform: scale(1.05); /* Grossit un peu */
+    box-shadow: 0 0 50px rgba(179, 26, 26, 0.6);
+    border-color: #ff1f1f;
 }
 
-/* ZONE DE BOUTIQUE (DROITE) */
+/* Effets au clic (Active) */
+.wolf-button:active {
+    transform: scale(0.95); /* Rétrécit un peu (effet d'enfoncement) */
+    box-shadow: 0 0 10px rgba(179, 26, 26, 0.8);
+    background: radial-gradient(circle, #2a2a2c 0%, #081a30 100%);
+}
+
+/* =========================================
+   5. ZONE BOUTIQUE (Droite - Améliorations)
+   ========================================= */
 .shop-zone {
-  flex: 1;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-  padding: 20px;
-  min-width: 250px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    flex: 1; /* Prend moins de place */
+    background: rgba(0, 0, 0, 0.8); /* Plus opaque pour lire le texte */
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-height: 80vh; /* Limite la hauteur si beaucoup d'items */
+    overflow-y: auto; /* Scroll si nécessaire */
+}
+
+/* Barre de défilement personnalisée pour la boutique */
+.shop-zone::-webkit-scrollbar {
+    width: 8px;
+}
+.shop-zone::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.3);
+}
+.shop-zone::-webkit-scrollbar-thumb {
+    background: #b31a1a;
+    border-radius: 4px;
 }
 
 .shop-zone h3 {
-  text-align: center;
-  font-family: "Cinzel", serif;
-  color: #ffd700;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 10px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    color: #ffd700; /* Or */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+    margin-top: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+    font-size: 1.5rem;
 }
 
+/* Item de la boutique */
 .shop-item {
-  background-color: rgba(255, 255, 255, 0.1);
-  margin-bottom: 10px;
-  padding: 10px 15px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  transition: background 0.2s;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-bottom: 12px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
 }
 
 .shop-item:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px); /* Petit décalage vers la droite */
+}
+
+/* Item désactivé (pas assez d'argent) */
+.shop-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(100%); /* En gris */
+}
+.shop-item.disabled:hover {
+    transform: none;
+    border-color: transparent;
 }
 
 .shop-info {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .item-name {
-  font-weight: bold;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #fff;
 }
 
 .item-cost {
-  color: #e94560;
-  font-size: 0.9rem;
+    color: #e94560; /* Rouge */
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 4px;
 }
 
 .item-count {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #888;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #666; /* Gris si 0 */
+}
+/* Si on en possède au moins 1 (à gérer en JS pour ajouter une classe 'owned') */
+.item-count.owned {
+    color: #ffd700;
 }
 
-/* CSS Mobile responsive */
+/* =========================================
+   6. ANIMATIONS & PARTICULES (Effet Viande)
+   ========================================= */
+
+/* Le petit steak qui apparaît au clic */
+.meat-particle {
+    position: fixed; /* 'Fixed' permet de se baser sur la fenêtre, mieux pour suivre la souris */
+    font-size: 2rem;
+    pointer-events: none; /* Le clic passe à travers */
+    z-index: 9999; /* Toujours au-dessus */
+    animation: floatUpAndFade 0.8s ease-out forwards;
+    user-select: none;
+}
+
+/* L'animation : monte, tourne et disparaît */
+@keyframes floatUpAndFade {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(0.5) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-50px) scale(1.2) rotate(15deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-120px) scale(1) rotate(30deg);
+    }
+}
+
+/* =========================================
+   7. RESPONSIVE (Mobile)
+   ========================================= */
 @media (max-width: 768px) {
+<<<<<<< HEAD
   .game-container {
     flex-direction: column;
   }
@@ -260,4 +403,27 @@ header {
 
 p {
   color: red;
+=======
+    h1 { font-size: 2rem; }
+    
+    .game-container {
+        flex-direction: column; /* Tout en colonne */
+        padding: 10px;
+    }
+    
+    .click-zone {
+        padding: 30px 20px;
+        min-height: auto;
+    }
+    
+    .wolf-button {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .shop-zone {
+        width: 100%; /* Prend toute la largeur */
+        box-sizing: border-box;
+    }
+>>>>>>> c9fbc501f430ad5c487c9110a8552c48dddf2e89
 }
