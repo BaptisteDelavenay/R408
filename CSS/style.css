@@ -1,3 +1,26 @@
+<<<<<<< HEAD
+html, body {
+    margin: 0;
+    padding: 0;
+/* RESET & BASE */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  font-family: "Roboto", sans-serif;
+  /* Dégradé sombre nuit/forêt */
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+=======
 /* =========================================
    1. RESET & BASE (Configuration générale)
    ========================================= */
@@ -30,12 +53,67 @@ body {
     /* Assombrissement pour la lisibilité (mélange noir + image) */
     background-color: rgba(0, 0, 0, 0.7); 
     background-blend-mode: darken; 
+>>>>>>> c9fbc501f430ad5c487c9110a8552c48dddf2e89
 }
 
 /* =========================================
    2. HEADER (En-tête)
    ========================================= */
 header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+nav {
+    background-color: #444;
+    overflow: hidden;
+}
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+main {
+    padding: 20px;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+h1 {
+    color: #333;
+}
+section {
+    margin-bottom: 20px;
+    margin-top: 200px;
+    text-align: center;
+}
+button {
+    background-color: #b31a1a;
+    color: white;
+    padding: 10px 20px;
+    width: 15%;
+    height: 10%;
+    border: none;
+    cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 2px solid #b31a1a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     background-color: rgba(0, 0, 0, 0.85); /* Très sombre */
     padding: 20px 0;
     text-align: center;
