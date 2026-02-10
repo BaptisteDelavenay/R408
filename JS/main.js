@@ -11,6 +11,11 @@ class Clicker {
     this.compteur += val;
     return this.compteur;
   }
+
+  payer(val) {
+    this.compteur -= val;
+    return this.compteur;
+  }
 }
 
 let clicker = new Clicker();
